@@ -1,6 +1,7 @@
 <!doctype html><html lang="en"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mount Rainier - actual six-layer model geometry</title>
+<script>if(new URLSearchParams(location.search).get('embed')==='1')document.documentElement.setAttribute('data-embedded','');</script>
 <style>
 body{font:15px system-ui;max-width:1300px;margin:20px auto;padding:0 16px;color:#1f2328;background:#fff}
 h1{font-size:26px;margin-bottom:8px}p{line-height:1.55}.notice{border-left:4px solid #bf8700;padding-left:12px}
@@ -8,6 +9,8 @@ h1{font-size:26px;margin-bottom:8px}p{line-height:1.55}.notice{border-left:4px s
 canvas{width:100%;height:auto;touch-action:none;border:1px solid #d0d7de;border-radius:8px;cursor:grab}
 .scale{margin:12px auto;width:70%}.bar{height:16px;background:linear-gradient(to right,#32679a,#568a61,#c0b078,#b98153,#eee)}
 .labels{display:flex;justify-content:space-between}small{color:#57606a}
+[data-embedded] body{margin:0;padding:12px;max-width:none}
+[data-embedded] body>:not(.controls):not(#terrain):not(script){display:none!important}
 </style>
 <h1 id="title">Mount Rainier - actual terrain and tetrahedral model</h1>
 <p id="facts"></p>
@@ -85,8 +88,8 @@ function draw(){
  for(const [end,label] of [[[12500,-12500,base],'E: 25 km'],[[-12500,12500,base],'N: 25 km'],[[-12500,-12500,hi],'Z: 6 km']]){
  const a=project(origin),b=project(end);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();ctx.fillText(label,b[0]+5,b[1]-5);}
  ctx.beginPath();ctx.moveTo(40,710);ctx.lineTo(40+5000*s,710);ctx.stroke();ctx.fillText('5 km (view plane)',40,735);
- ctx.fillText(cut?'Actual mesh cutaway: west half retained':'Full volume and actual faceted terrain',30,30);
- if(vpMode){ctx.fillText('Geometry/material view; adopted effective inputs, not calibrated geology',30,52);
+ if(!document.documentElement.hasAttribute('data-embedded'))ctx.fillText(cut?'Actual mesh cutaway: west half retained':'Full volume and actual faceted terrain',30,30);
+ if(vpMode){if(!document.documentElement.hasAttribute('data-embedded'))ctx.fillText('Geometry/material view; adopted effective inputs, not calibrated geology',30,52);
  ctx.fillText('Vp (km/s)',650,688);m.materials.forEach((a,i)=>{const x=650+85*i;ctx.fillStyle=a.color;ctx.fillRect(x,700,75,15);ctx.fillStyle='#24292f';ctx.fillText((a.vp_m_s/1000).toFixed(1),x+25,735)});}
 }
 canvas.onpointerdown=e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId)};
