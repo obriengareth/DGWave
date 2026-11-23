@@ -18,7 +18,7 @@ Source repository: [obriengareth/DGWave](https://github.com/obriengareth/DGWave)
 
 Verified baseline: Ubuntu 22.04 under WSL2, x86_64, Python 3.10.12, Open MPI 4.1.2; CPU JAX/JAXlib 0.6.2, NumPy 2.2.6, modepy 2026.1, mpi4py 4.1.2, meshio 5.3.5 and pytest 9.2.0. `requirements.lock` pins the complete CPU Python environment. This is not a claim of portability to every Python, MPI or operating-system version.
 
-Run these commands **inside Ubuntu/WSL**, from the project root, with Python 3.10, its venv support and Open MPI already available. They install only into the local project environment:
+For a fresh checkout, run these commands **inside Ubuntu/WSL**, with Python 3.10, its venv support, Git and Open MPI already available. Clone first, then install only into the local project environment:
 
 ```bash
 git clone https://github.com/obriengareth/DGWave.git
