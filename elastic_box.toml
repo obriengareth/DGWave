@@ -1,0 +1,40 @@
+# SI units; run with: .venv/bin/python -m dg_wave run elastic_box.toml
+# MPI: mpiexec --nooversubscribe --bind-to core --map-by core -n 4 .venv/bin/python -m dg_wave run elastic_box.toml
+# MPI exports are placed in output/elastic_box/mpi4, preserving serial exports.
+[mesh]
+path = "elastic_box.vtu"
+
+[material]
+density = 2500.0
+bulk_modulus = 3.0e10
+shear_modulus = 2.0e10
+
+[discretization]
+degree = 2
+
+[boundary]
+# One type per x/y/z axis, applied to both opposite faces.
+# Local impedance absorption is exact at normal incidence; oblique waves can reflect.
+types = ["absorbing", "absorbing", "absorbing"]
+
+[source]
+position = [500.0, 500.0, 500.0]
+frequency = 8.0
+amplitude = 1.0  # peak body acceleration, m/s^2
+width = 100.0   # Gaussian spatial standard deviation, m
+delay = 0.15    # Ricker peak time, s
+direction = [1.0, 0.0, 0.0]
+
+[time]
+dt = 0.0004
+steps = 750
+
+[runtime]
+backend = "cpu"
+
+[receivers]
+positions = [[600.0, 500.0, 500.0], [700.0, 500.0, 500.0], [500.0, 650.0, 500.0]]
+
+[output]
+directory = "output/elastic_box"
+interval = 10

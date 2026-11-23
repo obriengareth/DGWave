@@ -1,0 +1,54 @@
+# Synthetic numerical demonstrator: NOT inferred properties of a real volcano.
+# Regenerate: python -m dg_wave.volcano volcano.msh
+# Piecewise planar terrain, 384 tetrahedra; no geological-resolution claim.
+[mesh]
+path = "volcano.msh"
+
+[materials.1]
+rho = 2400.0
+vp = 3600.0
+vs = 2000.0
+
+[materials.2]
+rho = 2100.0
+vp = 2800.0
+vs = 1500.0
+
+[attenuation]
+band = [0.5, 3.0]
+reference_frequency = 1.5
+qp = 60.0
+qs = 40.0
+mechanisms = 3
+
+[discretization]
+degree = 2
+
+[boundary]
+types = ["absorbing", "absorbing", "absorbing"]
+free_tags = [10]
+
+[source]
+position = [800.0, 800.0, 700.0]
+frequency = 1.5
+# 64 Hann/Ricker-weighted Fourier frequencies strictly within this band.
+# Not time compact: finite-run prehistory truncation needs a later study.
+band = [0.5, 3.0]
+amplitude = 0.2
+width = 180.0
+delay = 0.5
+direction = [0.0, 0.0, 1.0]
+
+[receivers]
+positions = [[800.0, 800.0, 1100.0], [1000.0, 800.0, 1000.0], [1200.0, 800.0, 950.0]]
+
+[time]
+dt = 0.00025
+steps = 4800
+
+[runtime]
+backend = "cpu"
+
+[output]
+directory = "output/volcano"
+interval = 48

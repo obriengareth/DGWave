@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dg-wave"
+version = "0.1.0"
+description = "CPU/MPI tetrahedral DG elastic wave solver"
+requires-python = ">=3.10"
+dependencies = [
+    "jax>=0.6.2",
+    "numpy>=2.0",
+    "modepy",
+    "mpi4py>=4",
+    "meshio",
+    "tomli>=2; python_version < '3.11'",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+dg-wave = "dg_wave.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["dg_wave*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

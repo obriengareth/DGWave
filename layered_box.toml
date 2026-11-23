@@ -1,0 +1,50 @@
+# SI units. Generate mesh: .venv/bin/python scripts/layered_mesh.py
+# Solve: .venv/bin/python -m dg_wave run layered_box.toml
+# MPI: mpiexec --nooversubscribe --bind-to core --map-by core -n 4 .venv/bin/python -m dg_wave run layered_box.toml
+[mesh]
+path = "layered_box.msh"
+
+[materials.1]
+rho = 2500.0
+vp = 4500.0
+vs = 2500.0
+
+[materials.2]
+rho = 2000.0
+vp = 3000.0
+vs = 1600.0
+
+[discretization]
+degree = 2
+
+[boundary]
+types = ["absorbing", "absorbing", "absorbing"]
+top = "free"
+
+# Artificial element-constant quadratic damping, not material attenuation.
+[sponge]
+width = 200.0
+rate = 30.0
+faces = ["xmin", "xmax", "ymin", "ymax", "zmin"]
+
+[source]
+position = [500.0, 500.0, 350.0]
+frequency = 12.0
+amplitude = 2.0
+width = 50.0
+delay = 0.08
+direction = [0.0, 0.0, 1.0]
+
+[receivers]
+positions = [[500.0, 500.0, 450.0], [500.0, 500.0, 650.0], [700.0, 500.0, 850.0]]
+
+[time]
+dt = 0.00035
+steps = 1000
+
+[runtime]
+backend = "cpu"
+
+[output]
+directory = "output/layered_box"
+interval = 10

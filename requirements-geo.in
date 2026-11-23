@@ -1,0 +1,7 @@
+# Optional geometry-only environment; the CPU solver environment/lock is unchanged.
+numpy==2.2.6
+meshio==5.3.5
+modepy==2026.1
+pytest==9.2.0
+rasterio==1.4.3
+pyproj==3.7.1

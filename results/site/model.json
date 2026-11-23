@@ -1,0 +1,611 @@
+{
+  "model": "Mount Rainier six-layer simplified effective model",
+  "summit_anchor": {
+    "longitude": -121.76,
+    "latitude": 46.853,
+    "source": "https://www.usgs.gov/volcanoes/mount-rainier",
+    "meaning": "published approximate summit coordinate, not a resurveyed current maximum",
+    "published_nominal_elevation_m_not_used_for_base": 4392
+  },
+  "coordinates": {
+    "horizontal_crs": "EPSG:32610 WGS84/UTM10N",
+    "mesh_xy": "local east/north metres relative to summit anchor",
+    "utm_origin_m": [
+      594529.4943562417,
+      5189575.115604496
+    ],
+    "utm_bounds_m": [
+      582029.4943562417,
+      5177075.115604496,
+      607029.4943562417,
+      5202075.115604496
+    ],
+    "wgs84_search_bbox": [
+      -121.92617821448725,
+      46.73865175335495,
+      -121.59313770010442,
+      46.96712508548054
+    ],
+    "vertical_crs": "EPSG:3855 EGM2008 orthometric metres",
+    "vertical_transformation": "none; source EGM2008 retained, not NAVD88 or ellipsoidal height"
+  },
+  "dimensions": {
+    "width_x_m": 25000.0,
+    "width_y_m": 25000.0,
+    "total_height_m": 6000.0,
+    "mesh_highest_elevation_m": 4407.540234375035,
+    "flat_base_elevation_m": -1592.4597656249653,
+    "mesh_highest_xy_m": [
+      0.0,
+      0.0
+    ],
+    "retained_terrain_min_max_m": [
+      615.6352315571935,
+      4407.540234375035
+    ],
+    "edge_terrain_min_max_m": [
+      615.6352315571935,
+      1986.9628186712619
+    ],
+    "local_depth_min_max_m": [
+      2208.0949971821587,
+      6000.0
+    ],
+    "native_crop_max_m_not_retained_as_mesh_peak": 4414.60595703125
+  },
+  "dataset": {
+    "collection": "cop-dem-glo-30",
+    "item_id": "Copernicus_DSM_COG_10_N46_00_W122_00_DEM",
+    "unsigned_asset": "https://elevationeuwest.blob.core.windows.net/copernicus-dem/COP30_hh/Copernicus_DSM_COG_10_N46_00_W122_00_DEM.tif",
+    "stac_properties": {
+      "gsd": 30,
+      "datetime": "2021-04-22T00:00:00Z",
+      "platform": "TanDEM-X",
+      "proj:epsg": 4326,
+      "proj:shape": [
+        3600,
+        3600
+      ],
+      "proj:transform": [
+        0.0002777777777777778,
+        0.0,
+        -122.00013888888888,
+        0.0,
+        -0.0002777777777777778,
+        47.00013888888889
+      ]
+    },
+    "stac_datetime_is_not_exact_acquisition": true,
+    "acquisition": "main TanDEM-X2011-2015; older infill possible; exact local acquisition dates not in MPC item",
+    "source_type": "DSM, not bare-earth DTM; includes vegetation/infrastructure and glacier/snow surface",
+    "glaciers": "effective terrain/ice surface only; no ice thickness, bedrock correction or separate ice medium",
+    "license": "Copernicus GLO30 free license; attribution/derived-product notice required",
+    "license_and_datum_source": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+    "attribution": "produced using Copernicus WorldDEM-30 \u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+    "doi": "https://doi.org/10.5270/ESA-c5d3d65",
+    "raster": {
+      "crs": "EPSG:4326",
+      "nodata": null,
+      "full_shape": [
+        3600,
+        3600
+      ],
+      "window_col_row_width_height": [
+        263,
+        115,
+        1206,
+        830
+      ],
+      "crop_shape": [
+        830,
+        1206
+      ],
+      "crop_uncompressed_bytes": 4003920,
+      "source_tags": {
+        "AREA_OR_POINT": "Point"
+      },
+      "full_source_tile_downloaded": false,
+      "cache_bytes": 41943040
+    }
+  },
+  "terrain_sampling": {
+    "mesh_spacing_m": 500,
+    "mesh_nodes_xy": [
+      51,
+      51
+    ],
+    "method": "bilinear point samples of native cropped DSM at mesh vertices; affine triangles, no smoothing/vertical exaggeration",
+    "fidelity_grid_spacing_m": 125,
+    "fidelity_points": 40401,
+    "model_minus_DSM_rms_m": 42.515876827560575,
+    "model_minus_DSM_max_abs_m": 274.7829897293068,
+    "model_minus_DSM_abs_p95_m": 90.228600582647,
+    "fidelity_caveat": "coarse500m faceted terrain is an approximation, not30m model resolution or geological accuracy"
+  },
+  "mesh": {
+    "elements": 150000,
+    "vertices": 28611,
+    "min_volume_m3": 2890208.294196649,
+    "max_volume_m3": 55555555.55555557,
+    "total_volume_m3": 2070779694319.135,
+    "mean_ratio_min_p01_median_max": [
+      0.26992016060186447,
+      0.3746750388546696,
+      0.647335402581442,
+      0.9229976736750223
+    ],
+    "max_edge_over_min_altitude": 11.421511608636003,
+    "edge_min_max_m": [
+      69.36499906071958,
+      1802.3499768541449
+    ],
+    "terrain_faces": 5000,
+    "outer_faces": 9000,
+    "min_terrain_upward_normal_z": 0.6430453325090743,
+    "quality_guards": "positive volumes; conforming1/2-face incidence; complete exterior tags; mean-ratio>=.05, edge/min-altitude<=20 (distortion guards, not accuracy acceptance)",
+    "structured_divisions": [
+      50,
+      50,
+      10
+    ],
+    "vertical_intervals_top_down": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      3
+    ],
+    "cell_counts_by_material_tag": {
+      "1": 45000,
+      "2": 15000,
+      "3": 15000,
+      "4": 15000,
+      "5": 15000,
+      "6": 45000
+    },
+    "material_tags": {
+      "1": "Weathered/fractured effective rock",
+      "2": "Intermediate effective rock I",
+      "3": "Intermediate effective rock II",
+      "4": "Intermediate effective rock III",
+      "5": "Intermediate effective rock IV",
+      "6": "Basement effective approximation"
+    },
+    "boundary_tags": {
+      "10": "terrain free-surface candidate",
+      "20": "lateral/base absorbing candidate"
+    },
+    "interface_faces": [
+      {
+        "tags": [
+          1,
+          2
+        ],
+        "depth_below_faceted_terrain_m": 500.0,
+        "triangles": 5000,
+        "max_depth_error_m": 2.5011104298755527e-12
+      },
+      {
+        "tags": [
+          2,
+          3
+        ],
+        "depth_below_faceted_terrain_m": 875.0,
+        "triangles": 5000,
+        "max_depth_error_m": 2.5011104298755527e-12
+      },
+      {
+        "tags": [
+          3,
+          4
+        ],
+        "depth_below_faceted_terrain_m": 1250.0,
+        "triangles": 5000,
+        "max_depth_error_m": 2.5011104298755527e-12
+      },
+      {
+        "tags": [
+          4,
+          5
+        ],
+        "depth_below_faceted_terrain_m": 1625.0,
+        "triangles": 5000,
+        "max_depth_error_m": 2.5011104298755527e-12
+      },
+      {
+        "tags": [
+          5,
+          6
+        ],
+        "depth_below_faceted_terrain_m": 2000.0,
+        "triangles": 5000,
+        "max_depth_error_m": 2.5011104298755527e-12
+      }
+    ],
+    "topology_and_stable_element_ids_unchanged": true,
+    "moved_interior_vertices": 23409,
+    "maximum_vertical_vertex_remap_m": 2200.0,
+    "external_surface_and_base_vertices_bitwise_preserved": true
+  },
+  "stations": {
+    "count": 10,
+    "seed": 20261120,
+    "edge_inset_m": 500,
+    "placement": "uniform random XY, actual free-triangle barycentric Z; surface-station assumption",
+    "items": [
+      {
+        "id": "R01",
+        "xyz_m": [
+          5688.838310983399,
+          -8403.953944542533,
+          1562.3408079071176
+        ],
+        "element_id": 108538,
+        "face": 0,
+        "triangle_weights": [
+          0.6223233780332011,
+          0.18558451105186397,
+          0.1920921109149349
+        ],
+        "utm10n_xy_m": [
+          600218.332667225,
+          5181171.161659953
+        ],
+        "lon_lat_degrees": [
+          -121.68723709053025,
+          46.77655964688028
+        ]
+      },
+      {
+        "id": "R02",
+        "xyz_m": [
+          8002.293216516537,
+          2162.2601826386563,
+          1677.8747959630614
+        ],
+        "element_id": 124797,
+        "face": 0,
+        "triangle_weights": [
+          0.31993393224423927,
+          0.6754796347226875,
+          0.004586433033073263
+        ],
+        "utm10n_xy_m": [
+          602531.7875727582,
+          5191737.375787134
+        ],
+        "lon_lat_degrees": [
+          -121.65457158969186,
+          46.8712676800197
+        ]
+      },
+      {
+        "id": "R03",
+        "xyz_m": [
+          3669.3683867245163,
+          -2121.9871465240103,
+          2523.379840948927
+        ],
+        "element_id": 97257,
+        "face": 0,
+        "triangle_weights": [
+          0.4172889335029467,
+          0.24397429304802062,
+          0.33873677344903264
+        ],
+        "utm10n_xy_m": [
+          598198.8627429662,
+          5187453.128457972
+        ],
+        "lon_lat_degrees": [
+          -121.71233520061256,
+          46.83337757242441
+        ]
+      },
+      {
+        "id": "R04",
+        "xyz_m": [
+          10202.844272259324,
+          -2420.440778944898,
+          1387.2322861104783
+        ],
+        "element_id": 136258,
+        "face": 0,
+        "triangle_weights": [
+          0.594311455481351,
+          0.24657010240844465,
+          0.15911844211020434
+        ],
+        "utm10n_xy_m": [
+          604732.3386285009,
+          5187154.674825551
+        ],
+        "lon_lat_degrees": [
+          -121.62675563135731,
+          46.82969684254656
+        ]
+      },
+      {
+        "id": "R05",
+        "xyz_m": [
+          -10748.748146008056,
+          -1045.2378391092661,
+          1032.7529823078812
+        ],
+        "element_id": 10377,
+        "face": 0,
+        "triangle_weights": [
+          0.40702061379758014,
+          0.09047567821853227,
+          0.5025037079838875
+        ],
+        "utm10n_xy_m": [
+          583780.7462102337,
+          5188529.877765386
+        ],
+        "lon_lat_degrees": [
+          -121.9011613777947,
+          46.84503607943682
+        ]
+      },
+      {
+        "id": "R06",
+        "xyz_m": [
+          -3129.6857505367298,
+          -2224.8480085851043,
+          2636.969858948076
+        ],
+        "element_id": 55258,
+        "face": 0,
+        "triangle_weights": [
+          0.2593715010734595,
+          0.19032451609674894,
+          0.5503039828297915
+        ],
+        "utm10n_xy_m": [
+          591399.8086057049,
+          5187350.2675959105
+        ],
+        "lon_lat_degrees": [
+          -121.80148992336885,
+          46.83342027741393
+        ]
+      },
+      {
+        "id": "R07",
+        "xyz_m": [
+          8607.31270211617,
+          -6944.371390586884,
+          1137.890574824179
+        ],
+        "element_id": 126718,
+        "face": 0,
+        "triangle_weights": [
+          0.7853745957676583,
+          0.10336818540611058,
+          0.11125721882623112
+        ],
+        "utm10n_xy_m": [
+          603136.8070583579,
+          5182630.744213909
+        ],
+        "lon_lat_degrees": [
+          -121.64869003247296,
+          46.78924609611425
+        ]
+      },
+      {
+        "id": "R08",
+        "xyz_m": [
+          6103.755258613757,
+          -7764.029116439966,
+          1524.9019523501238
+        ],
+        "element_id": 111597,
+        "face": 0,
+        "triangle_weights": [
+          0.26443124989255373,
+          0.5280582328799319,
+          0.20751051722751437
+        ],
+        "utm10n_xy_m": [
+          600633.2496148554,
+          5181811.086488056
+        ],
+        "lon_lat_degrees": [
+          -121.68166300990725,
+          46.782254412374286
+        ]
+      },
+      {
+        "id": "R09",
+        "xyz_m": [
+          8870.876593412235,
+          7357.118943467707,
+          2019.2381704764957
+        ],
+        "element_id": 128398,
+        "face": 0,
+        "triangle_weights": [
+          0.25824681317553044,
+          0.02751529988905521,
+          0.7142378869354143
+        ],
+        "utm10n_xy_m": [
+          603400.3709496539,
+          5196932.234547963
+        ],
+        "lon_lat_degrees": [
+          -121.64199776182213,
+          46.917868205875095
+        ]
+      },
+      {
+        "id": "R10",
+        "xyz_m": [
+          4870.802845387505,
+          -11872.14584983136,
+          1929.7502914508293
+        ],
+        "element_id": 102118,
+        "face": 0,
+        "triangle_weights": [
+          0.25839430922499007,
+          0.48589739043773084,
+          0.2557083003372791
+        ],
+        "utm10n_xy_m": [
+          599400.2972016291,
+          5177702.969754664
+        ],
+        "lon_lat_degrees": [
+          -121.69870132810237,
+          46.745479359273645
+        ]
+      }
+    ]
+  },
+  "materials": [
+    {
+      "tag": 1,
+      "name": "Weathered/fractured effective rock",
+      "depth_top_m": 0.0,
+      "depth_bottom_m": 500.0,
+      "rho_kg_m3": 2200.0,
+      "vp_m_s": 2500.0,
+      "vs_m_s": 1400.0,
+      "qp": 60.0,
+      "qs": 40.0,
+      "bulk_modulus_Pa": 8000666666.666666,
+      "shear_modulus_Pa": 4312000000.0,
+      "lame_lambda_Pa": 5126000000.0,
+      "poisson_ratio": 0.2715617715617716,
+      "necessary_inverse_bulk_q": 0.01067827681026581,
+      "implied_bulk_q": 93.64806866952792,
+      "color": "#d6ac57"
+    },
+    {
+      "tag": 2,
+      "name": "Intermediate effective rock I",
+      "depth_top_m": 500.0,
+      "depth_bottom_m": 875.0,
+      "rho_kg_m3": 2300.0,
+      "vp_m_s": 3000.0,
+      "vs_m_s": 1700.0,
+      "qp": 75.0,
+      "qs": 50.0,
+      "bulk_modulus_Pa": 11837333333.333332,
+      "shear_modulus_Pa": 6647000000.0,
+      "lame_lambda_Pa": 7405999999.999999,
+      "poisson_ratio": 0.2635024549918167,
+      "necessary_inverse_bulk_q": 0.008341968911917099,
+      "implied_bulk_q": 119.87577639751552,
+      "color": "#a6bf64"
+    },
+    {
+      "tag": 3,
+      "name": "Intermediate effective rock II",
+      "depth_top_m": 875.0,
+      "depth_bottom_m": 1250.0,
+      "rho_kg_m3": 2400.0,
+      "vp_m_s": 3500.0,
+      "vs_m_s": 2000.0,
+      "qp": 90.0,
+      "qs": 60.0,
+      "bulk_modulus_Pa": 16600000000.0,
+      "shear_modulus_Pa": 9600000000.0,
+      "lame_lambda_Pa": 10200000000.0,
+      "poisson_ratio": 0.25757575757575757,
+      "necessary_inverse_bulk_q": 0.006827309236947791,
+      "implied_bulk_q": 146.47058823529412,
+      "color": "#63b69e"
+    },
+    {
+      "tag": 4,
+      "name": "Intermediate effective rock III",
+      "depth_top_m": 1250.0,
+      "depth_bottom_m": 1625.0,
+      "rho_kg_m3": 2500.0,
+      "vp_m_s": 4000.0,
+      "vs_m_s": 2300.0,
+      "qp": 100.0,
+      "qs": 70.0,
+      "bulk_modulus_Pa": 22366666666.666668,
+      "shear_modulus_Pa": 13225000000.0,
+      "lame_lambda_Pa": 13550000000.000002,
+      "poisson_ratio": 0.2530345471521942,
+      "necessary_inverse_bulk_q": 0.006621247604854162,
+      "implied_bulk_q": 151.02893890675242,
+      "color": "#4b99b6"
+    },
+    {
+      "tag": 5,
+      "name": "Intermediate effective rock IV",
+      "depth_top_m": 1625.0,
+      "depth_bottom_m": 2000.0,
+      "rho_kg_m3": 2600.0,
+      "vp_m_s": 4500.0,
+      "vs_m_s": 2600.0,
+      "qp": 125.0,
+      "qs": 85.0,
+      "bulk_modulus_Pa": 29215333333.333332,
+      "shear_modulus_Pa": 17576000000.0,
+      "lame_lambda_Pa": 17498000000.0,
+      "poisson_ratio": 0.24944403261675316,
+      "necessary_inverse_bulk_q": 0.0049801943916101,
+      "implied_bulk_q": 200.79537491240364,
+      "color": "#657eb8"
+    },
+    {
+      "tag": 6,
+      "name": "Basement effective approximation",
+      "depth_top_m": 2000.0,
+      "depth_bottom_m": null,
+      "rho_kg_m3": 2700.0,
+      "vp_m_s": 5000.0,
+      "vs_m_s": 2900.0,
+      "qp": 150.0,
+      "qs": 100.0,
+      "bulk_modulus_Pa": 37224000000.0,
+      "shear_modulus_Pa": 22707000000.0,
+      "lame_lambda_Pa": 22086000000.0,
+      "poisson_ratio": 0.24653405666063893,
+      "necessary_inverse_bulk_q": 0.003955512572533849,
+      "implied_bulk_q": 252.8117359413203,
+      "color": "#9469ac"
+    }
+  ],
+  "geological_interpretation": {
+    "boundary_definition": "vertical depth below the SAME piecewise-planar DSM-derived simulation terrain",
+    "interface_depths_m": [
+      500.0,
+      875.0,
+      1250.0,
+      1625.0,
+      2000.0
+    ],
+    "limitations": [
+      "All five interfaces are terrain-following fixed-depth surfaces, including basement; this is intentional geometric simplification, not mapped stratigraphy.",
+      "Rainier is an andesitic edifice over complex older volcanic/sedimentary/intrusive rocks, not six laterally uniform depth-only units.",
+      "The0.5/0.875/1.25/1.625/2km depths and2.5\u20135km/s velocities are agreed modelling assumptions, not values inferred from the cited papers.",
+      "The same layers extend across the entire25km square, including valleys and pre-edifice rock; no lateral mapped geology, hydrothermal alteration or ice/bedrock separation is represented.",
+      "The deepest effective unit is only208.095m thick at the shallowest terrain column and4000m thick beneath the retained summit.",
+      "The published5\u201318km low-velocity anomaly is NOT represented as a magma chamber or used to assign these layers."
+    ],
+    "context_sources": [
+      {
+        "url": "https://pubs.usgs.gov/publication/pp444",
+        "citation": "Fiske,Hopson,Waters1963,USGS Professional Paper444",
+        "supports": "andesitic edifice over older, structurally complex volcanic/sedimentary/intrusive rock; not the proposed depth/Vp values"
+      },
+      {
+        "url": "https://pubs.usgs.gov/publication/70021644",
+        "citation": "Moran,Lees,Malone1999,doi10.1029/1999JB900036",
+        "supports": "upper-crust velocity heterogeneity/geology correlation and deeper5\u201318km low-velocity anomaly; not these contacts or properties"
+      }
+    ]
+  },
+  "showcase_context": "Actual geometry/material inputs for the completed exploratory 10 s CPU/MPI run. Not calibrated Rainier geology or a wavefield/accuracy certificate.",
+  "material_frequency_convention": "Storage moduli at 0.5 Hz; input Vp/Vs are not exact finite-Q phase speeds."
+}

@@ -1,0 +1,27 @@
+# SI units. Paths are relative to this file; Stage 0 does not load a mesh.
+[mesh]
+path = "mesh.msh"
+
+[material]
+density = 2500.0
+bulk_modulus = 3.0e10
+shear_modulus = 2.0e10
+
+[discretization]
+degree = 2
+
+[source]
+position = [0.0, 0.0, 0.0]
+frequency = 10.0
+amplitude = 1.0
+
+[time]
+dt = 1.0e-5
+steps = 100
+
+[runtime]
+backend = "cpu"
+
+[output]
+directory = "output"
+interval = 10
